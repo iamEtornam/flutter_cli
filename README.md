@@ -46,7 +46,7 @@ A command-line interface tool that creates Flutter projects with a predefined, s
    dart pub global activate flutter_cli
 
    # Or clone and install from source
-   git clone https://github.com/yourusername/flutter_cli.git
+   git clone https://github.com/iamEtornam/flutter_cli.git
    cd flutter_cli
    dart pub global activate --source path .
    ```
