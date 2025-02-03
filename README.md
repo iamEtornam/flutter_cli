@@ -51,6 +51,72 @@ A command-line interface tool that creates Flutter projects with a predefined, s
    dart pub global activate --source path .
    ```
 
+## Compiling to Native Executables
+
+To compile the CLI tool into a native executable for Linux, macOS, and Windows, follow these steps:
+
+1️⃣ Ensure Dart SDK is Installed
+
+You need Dart installed. If you haven't installed it yet, get it from:
+🔗 https://dart.dev/get-dart
+
+Check your version:
+
+```bash
+dart --version
+```
+
+2️⃣ Compile for the Current OS
+
+If you only need an executable for the OS you're working on, use:
+
+```bash
+dart compile exe bin/flutter_cli.dart
+```
+
+This generates a flutter_cli.exe (Windows) or flutter_cli (Linux/macOS) in the same directory.
+
+3️⃣ Compile for Specific Platforms
+
+To compile for different operating systems, use cross-compilation:
+
+🟢 Compile for Linux (on Linux)
+```bash
+dart compile exe bin/flutter_cli.dart -o flutter_cli_linux
+```
+
+🟣 Compile for macOS (on macOS)
+```bash
+dart compile exe bin/flutter_cli.dart -o flutter_cli_macos
+```
+
+🔵 Compile for Windows (on Windows)
+```bash
+dart compile exe bin/flutter_cli.dart -o flutter_cli_windows.exe
+```
+
+4️⃣ Cross-Compiling
+
+Dart does not support native cross-compilation (e.g., compiling a Windows executable on Linux). However, you can use Docker or a VM to compile for different platforms.
+
+Cross-Compiling for Linux on macOS/Windows (Using Docker):
+
+```bash
+docker run --rm -v "$PWD":/app -w /app dart:latest dart compile exe bin/flutter_cli.dart -o flutter_cli_linux
+```
+
+For macOS and Windows, you need a Mac and Windows PC (or a macOS runner like a Mac Mini in the cloud).
+
+5️⃣ Verify the Output
+
+Run:
+
+```bash
+./flutter_cli_linux   # On Linux
+./flutter_cli_macos   # On macOS
+flutter_cli_windows.exe  # On Windows
+```
+
 ## Usage
 
 1. Open your terminal and run:
