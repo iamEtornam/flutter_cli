@@ -1,0 +1,16 @@
+name: flutter_cli
+description: A CLI tool to create Flutter projects with predefined folder structure
+version: 1.0.0
+
+environment:
+  sdk: '>=2.19.0 <4.0.0'
+
+dependencies:
+  args: ^2.4.2
+  path: ^1.8.3
+
+dev_dependencies:
+  lints: ^2.1.1
+
+executables:
+  flutter_cli: flutter_cli
